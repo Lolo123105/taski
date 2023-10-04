@@ -16,8 +16,8 @@ jobs:
           POSTGRES_USER: django_user
           POSTGRES_PASSWORD: django_password
           POSTGRES_DB: django_db
-        ports:
-          - 5432:5432
+          DB_HOST: 127.0.0.1
+          DB_PORT: 5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
     - name: Check out code
@@ -66,4 +66,4 @@ jobs:
           # Для каждого пересобранного образа 
           # устанавливаем тег latest, чтобы потом
           # на сервере и в docker-compose.yml не указывать версию
-          tags: ваш-логин-на-docker-hub/taski_backend:latest 
+          tags: lolo123105/taski_backend:latest 
